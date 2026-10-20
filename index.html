@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#eef1f8">
+  <title>Contraseñas</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="pagina">
+    <h1>Contraseñas</h1>
+
+    <div class="modos" role="tablist" aria-label="Tipo de contraseña">
+      <button type="button" role="tab" data-modo="aleatoria">Aleatoria</button>
+      <button type="button" role="tab" data-modo="frase">Frase</button>
+      <button type="button" role="tab" data-modo="pin">PIN</button>
+    </div>
+
+    <section class="resultado">
+      <output class="clave" id="clave" aria-live="polite"></output>
+      <div class="fuerza">
+        <div class="fuerza-barra"><div class="fuerza-nivel" id="fuerza-nivel"></div></div>
+        <span class="fuerza-texto" id="fuerza-texto"></span>
+      </div>
+      <div class="botones">
+        <button type="button" class="boton-principal" id="copiar">Copiar</button>
+        <button type="button" class="boton" id="otra">Otra</button>
+      </div>
+    </section>
+
+    <section class="opciones" data-panel="aleatoria">
+      <label class="deslizador">
+        <span>Largo: <strong id="largo-valor"></strong> caracteres</span>
+        <input type="range" id="largo" min="8" max="64" step="1">
+      </label>
+      <label class="casilla"><input type="checkbox" id="mayusculas"> Mayúsculas (A–Z)</label>
+      <label class="casilla"><input type="checkbox" id="minusculas"> Minúsculas (a–z)</label>
+      <label class="casilla"><input type="checkbox" id="numeros"> Números (0–9)</label>
+      <label class="casilla"><input type="checkbox" id="simbolos"> Símbolos (!@#$…)</label>
+      <label class="casilla"><input type="checkbox" id="sin-parecidos"> Evitar parecidos (0 O 1 l I)</label>
+    </section>
+
+    <section class="opciones" data-panel="frase">
+      <label class="deslizador">
+        <span>Palabras: <strong id="palabras-valor"></strong></span>
+        <input type="range" id="palabras" min="3" max="8" step="1">
+      </label>
+      <label class="campo">
+        <span>Separador</span>
+        <select id="separador">
+          <option value="-">Guion ( - )</option>
+          <option value=".">Punto ( . )</option>
+          <option value="_">Guion bajo ( _ )</option>
+          <option value=" ">Espacio</option>
+          <option value="">Nada</option>
+        </select>
+      </label>
+      <label class="casilla"><input type="checkbox" id="capitalizar"> Primera letra en mayúscula</label>
+      <label class="casilla"><input type="checkbox" id="con-numero"> Agregar un número al final</label>
+    </section>
+
+    <section class="opciones" data-panel="pin">
+      <label class="deslizador">
+        <span>Dígitos: <strong id="digitos-valor"></strong></span>
+        <input type="range" id="digitos" min="4" max="12" step="1">
+      </label>
+      <p class="nota">Útil para tarjetas, teléfonos o candados. Para cuentas en internet usa una aleatoria o una frase.</p>
+    </section>
+
+    <p class="nota">Se genera en este dispositivo. No se guarda ni se envía a ningún lado.</p>
+  </main>
+
+  <script src="palabras.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
