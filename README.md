@@ -2,7 +2,7 @@
 
 Generador de contraseñas: aleatorias (largo y tipos de caracteres configurables), frases de palabras en español fáciles de recordar, y PINs. Todo se genera en el navegador; nada se guarda ni se envía.
 
-Publicado en http://192.168.1.4/contrasenas/
+Publicado en https://192.168.1.4/contrasenas/
 
 Para publicar:
 

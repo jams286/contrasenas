@@ -1,5 +1,7 @@
 # contrasenas (casa)
 
+Tracker: contrasenas
+
 Generador de contraseñas para la familia (tablet vía el hub `infra/home` y celular).
 
 ## Qué hace
@@ -20,5 +22,5 @@ Sitio estático, sin frameworks ni paso de build:
 
 ## Dónde se publica
 
-- URL: http://192.168.1.4/contrasenas/
+- URL: https://192.168.1.4/contrasenas/
 - Carpeta: `/var/www/contrasenas/` (de jams, sin sudo). Comando de publicación en el README.
